@@ -1,0 +1,68 @@
+Query Ejercicio 1
+SELECT t1.avions_id, t1.avions_capacitat, t1.avions_model, t2.seient_id 
+FROM cibernarium.vl_avions t1 join vl_seients t2 on t1.avions_id=t2.avions_id;
+
+
+Query Ejercicio 2
+REVICION DE INVENTARIO
+select *from art_picture where art_picture_sold='N'
+
+REGISTRO DE CUADROS VENDIDOS
+select t1.art_client_id, t1.art_picture_id, t2.art_picture_autor, t1.art_client_name, t1.art_client_lastname, t1.art_client_dni 
+from art_client t1 left join art_picture t2 on t1.art_picture_id=t2.art_picture_id
+
+
+
+Query Ejercicio 3
+
+TABLA DE USUARIOS REGISTRADOS
+select * from youtube_user
+
+TABLA DE USUARIOS Y VIDEOS SUBIDOS
+select t1.st_mail, t2.st_title, t2.st_description, concat(t2.st_url,t2.st_videoid) AS url 
+from youtube_user t1 join youtube_register t2 on t1.st_user_id=t2.st_user_id
+
+
+
+Query Ejercicio 4
+INVENTARIO DE LIBROS
+select t1.book_id, t1.book_description, t2.autor_name, t2.autor_lastname, t1.book_price, t1.book_stock 
+from amzbook_books t1 join amzbook_autor t2 on t1.book_autor_id = t2.book_autor_id
+
+INFORMACION DE LOS ESCRITORES
+select t1.book_autor_id, t1.autor_name, t1.autor_lastname, t1.autor_address, count(*) as book_writes 
+from amzbook_autor t1 join amzbook_books t2 on t1.book_autor_id = t2.book_autor_id group by t2.book_autor_id
+
+DETALLE DE FACTURA
+select t1.bill_id, t2.client_name, t2.client_lastname, t1.book_description, t1.book_price 
+from amzbook_bill t1 join amzbook_clients t2 on t1.client_id = t2.client_id
+
+
+
+Query Ejercicio 5
+TABLA DE ACCESO AL USUARIO
+SELECT * FROM cibernarium.rsocial_user;
+
+TABLA DE RELACIONES ENTRE USUARIOS
+SELECT * FROM cibernarium.rsocia_user_relation;
+
+TABLA DE ALMACENAJE DE IMAGENES
+SELECT * FROM cibernarium.rsocia_user_gallery;
+
+PD: LAS RELACIONES ENTRE TABLAS ESTAN HECHAS DE MODO QUE NO SE PUEDE INGRESAR UN DATO DE UN USUARIO QUE NO EXISTE.
+
+
+QUERY Ejercicio 6
+INFORMACION DE LOS PROVEEDORES
+SELECT * FROM cibernarium.opt_providers;
+
+INFORMACION DE PRODUCTOS Y PROVEDORES
+select t1.prod_id, t1.prod_brand, t1.prod_description, t1.prod_type, t1.prod_grad, t1.prod_color, t1.prod_price, t2.prov_name, t2.prov_phone
+from opt_product t1 join opt_providers t2 on t1.prod_prov = t2.prov_id
+
+INFORMACION DE PRODUCTOS FACTURADOS
+select t1.bill_id, t1.bill_date, t2.client_name, t2.client_lastname, t1.prod_id, t1.prod_description, t1.prod_price, t3.empl_name, t3.empl_lastname
+from opt_bill t1 join opt_custumers t2 on t1.client_id = t2.client_id join opt_rrhh t3 on t1.empl_id = t3.empl_id
+
+
+

@@ -1,0 +1,390 @@
+1
+select nombre from producto
+Disco duro SATA3 1TB
+Memoria RAM DDR4 8GB
+Disco SSD 1 TB
+GeForce GTX 1050Ti
+GeForce GTX 1080 Xtreme
+Monitor 24 LED Full HD
+Monitor 27 LED Full HD
+Portátil Yoga 520
+Portátil Ideapd 320
+Impresora HP Deskjet 3720
+Impresora HP Laserjet Pro M26nw
+
+2
+select nombre, precio from producto
+Disco duro SATA3 1TB	86.99
+Memoria RAM DDR4 8GB	120
+Disco SSD 1 TB	150.99
+GeForce GTX 1050Ti	185
+GeForce GTX 1080 Xtreme	755
+Monitor 24 LED Full HD	202
+Monitor 27 LED Full HD	245.99
+Portátil Yoga 520	559
+Portátil Ideapd 320	444
+Impresora HP Deskjet 3720	59.99
+Impresora HP Laserjet Pro M26nw	180
+
+3
+select * from producto
+1	Disco duro SATA3 1TB	86.99	5
+2	Memoria RAM DDR4 8GB	120	6
+3	Disco SSD 1 TB	150.99	4
+4	GeForce GTX 1050Ti	185	7
+5	GeForce GTX 1080 Xtreme	755	6
+6	Monitor 24 LED Full HD	202	1
+7	Monitor 27 LED Full HD	245.99	1
+8	Portátil Yoga 520	559	2
+9	Portátil Ideapd 320	444	2
+10	Impresora HP Deskjet 3720	59.99	3
+11	Impresora HP Laserjet Pro M26nw	180	3
+
+4
+select nombre, precio , precio * 1.3 from producto
+'Disco duro SATA3 1TB', '86.99', '113.087'
+'Memoria RAM DDR4 8GB', '120', '156'
+'Disco SSD 1 TB', '150.99', '196.287'
+'GeForce GTX 1050Ti', '185', '240.5'
+'GeForce GTX 1080 Xtreme', '755', '981.5'
+'Monitor 24 LED Full HD', '202', '262.6'
+'Monitor 27 LED Full HD', '245.99', '319.78700000000003'
+'Portátil Yoga 520', '559', '726.7'
+'Portátil Ideapd 320', '444', '577.2'
+'Impresora HP Deskjet 3720', '59.99', '77.98700000000001'
+'Impresora HP Laserjet Pro M26nw', '180', '234'
+
+5
+select nombre as nombre_de_producto, precio as dolares , precio  * 1.3 as euros from producto
+Disco duro SATA3 1TB	86.99	113.087
+Memoria RAM DDR4 8GB	120	156
+Disco SSD 1 TB	150.99	196.287
+GeForce GTX 1050Ti	185	240.5
+GeForce GTX 1080 Xtreme	755	981.5
+Monitor 24 LED Full HD	202	262.6
+Monitor 27 LED Full HD	245.99	319.78700000000003
+Portátil Yoga 520	559	726.7
+Portátil Ideapd 320	444	577.2
+Impresora HP Deskjet 3720	59.99	77.98700000000001
+Impresora HP Laserjet Pro M26nw	180	234
+
+6
+select codigo, UPPER(nombre), precio, codigo_fabricante from producto
+1	DISCO DURO SATA3 1TB	86.99	5
+2	MEMORIA RAM DDR4 8GB	120	6
+3	DISCO SSD 1 TB	150.99	4
+4	GEFORCE GTX 1050TI	185	7
+5	GEFORCE GTX 1080 XTREME	755	6
+6	MONITOR 24 LED FULL HD	202	1
+7	MONITOR 27 LED FULL HD	245.99	1
+8	PORTÁTIL YOGA 520	559	2
+9	PORTÁTIL IDEAPD 320	444	2
+10	IMPRESORA HP DESKJET 3720	59.99	3
+11	IMPRESORA HP LASERJET PRO M26NW	180	3
+
+7
+select codigo, lower(nombre), precio, codigo_fabricante from producto
+1	disco duro sata3 1tb	86.99	5
+2	memoria ram ddr4 8gb	120	6
+3	disco ssd 1 tb	150.99	4
+4	geforce gtx 1050ti	185	7
+5	geforce gtx 1080 xtreme	755	6
+6	monitor 24 led full hd	202	1
+7	monitor 27 led full hd	245.99	1
+8	portátil yoga 520	559	2
+9	portátil ideapd 320	444	2
+10	impresora hp deskjet 3720	59.99	3
+11	impresora hp laserjet pro m26nw	180	3
+
+8
+select nombre, upper(left(nombre,2)) from fabricante
+Asus	AS
+Lenovo	LE
+Hewlett-Packard	HE
+Samsung	SA
+Seagate	SE
+Crucial	CR
+Gigabyte	GI
+Huawei	HU
+Xiaomi	XI
+
+9
+select codigo, nombre, round(precio,1), codigo_fabricante from producto
+1	Disco duro SATA3 1TB	87.0	5
+2	Memoria RAM DDR4 8GB	120.0	6
+3	Disco SSD 1 TB	151.0	4
+4	GeForce GTX 1050Ti	185.0	7
+5	GeForce GTX 1080 Xtreme	755.0	6
+6	Monitor 24 LED Full HD	202.0	1
+7	Monitor 27 LED Full HD	246.0	1
+8	Portátil Yoga 520	559.0	2
+9	Portátil Ideapd 320	444.0	2
+10	Impresora HP Deskjet 3720	60.0	3
+11	Impresora HP Laserjet Pro M26nw	180.0	3
+
+10
+select codigo, nombre, truncate (precio,0), codigo_fabricante from producto
+1	Disco duro SATA3 1TB	86	5
+2	Memoria RAM DDR4 8GB	120	6
+3	Disco SSD 1 TB	150	4
+4	GeForce GTX 1050Ti	185	7
+5	GeForce GTX 1080 Xtreme	755	6
+6	Monitor 24 LED Full HD	202	1
+7	Monitor 27 LED Full HD	245	1
+8	Portátil Yoga 520	559	2
+9	Portátil Ideapd 320	444	2
+10	Impresora HP Deskjet 3720	59	3
+11	Impresora HP Laserjet Pro M26nw	180	3
+
+11
+select t1.codigo_fabricante, t2.nombre from producto t1 join fabricante t2 on t1.codigo_fabricante = t2.codigo
+1	Asus
+1	Asus
+2	Lenovo
+2	Lenovo
+3	Hewlett-Packard
+3	Hewlett-Packard
+4	Samsung
+5	Seagate
+6	Crucial
+6	Crucial
+7	Gigabyte
+
+12
+select distinct t1.codigo_fabricante, t2.nombre from producto t1 join fabricante t2 on t1.codigo_fabricante = t2.codigo
+1	Asus
+2	Lenovo
+3	Hewlett-Packard
+4	Samsung
+5	Seagate
+6	Crucial
+7	Gigabyte
+
+13
+select t1.codigo_fabricante, t2.nombre from producto t1 join fabricante t2 on t1.codigo_fabricante = t2.codigo order by t2.nombre asc
+1	Asus
+1	Asus
+6	Crucial
+6	Crucial
+7	Gigabyte
+3	Hewlett-Packard
+3	Hewlett-Packard
+2	Lenovo
+2	Lenovo
+4	Samsung
+5	Seagate
+
+14
+select t1.codigo_fabricante, t2.nombre from producto t1 join fabricante t2 on t1.codigo_fabricante = t2.codigo order by t2.nombre desc
+5	Seagate
+4	Samsung
+2	Lenovo
+2	Lenovo
+3	Hewlett-Packard
+3	Hewlett-Packard
+7	Gigabyte
+6	Crucial
+6	Crucial
+1	Asus
+1	Asus
+
+15
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo order by t1.nombre asc, t1.precio desc
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+3	Disco SSD 1 TB	150.99	4	Samsung
+4	GeForce GTX 1050Ti	185	7	Gigabyte
+5	GeForce GTX 1080 Xtreme	755	6	Crucial
+10	Impresora HP Deskjet 3720	59.99	3	Hewlett-Packard
+11	Impresora HP Laserjet Pro M26nw	180	3	Hewlett-Packard
+2	Memoria RAM DDR4 8GB	120	6	Crucial
+6	Monitor 24 LED Full HD	202	1	Asus
+7	Monitor 27 LED Full HD	245.99	1	Asus
+9	Portátil Ideapd 320	444	2	Lenovo
+8	Portátil Yoga 520	559	2	Lenovo
+
+16
+select * from fabricante limit 5
+1	Asus
+2	Lenovo
+3	Hewlett-Packard
+4	Samsung
+5	Seagate
+
+17
+select * from fabricante limit 3,2
+4	Samsung
+5	Seagate
+
+18
+select * from producto order by precio asc limit 1
+10	Impresora HP Deskjet 3720	59.99	3
+
+19
+select * from producto order by precio desc limit 1
+5	GeForce GTX 1080 Xtreme	755	6
+
+20
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.codigo_fabricante = 2 order by t1.nombre asc, t1.precio desc;
+9	Portátil Ideapd 320	444	2	Lenovo
+8	Portátil Yoga 520	559	2	Lenovo
+
+21
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio <= 120 order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+10	Impresora HP Deskjet 3720	59.99	3	Hewlett-Packard
+2	Memoria RAM DDR4 8GB	120	6	Crucial
+
+22
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio >= 400 order by t1.nombre asc, t1.precio desc;
+5	GeForce GTX 1080 Xtreme	755	6	Crucial
+9	Portátil Ideapd 320	444	2	Lenovo
+8	Portátil Yoga 520	559	2	Lenovo
+
+23
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio < 400 order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+3	Disco SSD 1 TB	150.99	4	Samsung
+4	GeForce GTX 1050Ti	185	7	Gigabyte
+10	Impresora HP Deskjet 3720	59.99	3	Hewlett-Packard
+11	Impresora HP Laserjet Pro M26nw	180	3	Hewlett-Packard
+2	Memoria RAM DDR4 8GB	120	6	Crucial
+6	Monitor 24 LED Full HD	202	1	Asus
+7	Monitor 27 LED Full HD	245.99	1	Asus
+
+24
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio > 80 and t1.precio < 300 order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+3	Disco SSD 1 TB	150.99	4	Samsung
+4	GeForce GTX 1050Ti	185	7	Gigabyte
+11	Impresora HP Laserjet Pro M26nw	180	3	Hewlett-Packard
+2	Memoria RAM DDR4 8GB	120	6	Crucial
+6	Monitor 24 LED Full HD	202	1	Asus
+7	Monitor 27 LED Full HD	245.99	1	Asus
+
+25
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio between 60 and 200
+order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+3	Disco SSD 1 TB	150.99	4	Samsung
+4	GeForce GTX 1050Ti	185	7	Gigabyte
+11	Impresora HP Laserjet Pro M26nw	180	3	Hewlett-Packard
+2	Memoria RAM DDR4 8GB	120	6	Crucial
+
+26
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio > 200 and codigo_fabricante = 6
+order by t1.nombre asc, t1.precio desc;
+5	GeForce GTX 1080 Xtreme	755	6	Crucial
+
+
+27
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.codigo_fabricante = 1 or t1.codigo_fabricante = 3 or t1.codigo_fabricante = 5
+order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+10	Impresora HP Deskjet 3720	59.99	3	Hewlett-Packard
+11	Impresora HP Laserjet Pro M26nw	180	3	Hewlett-Packard
+6	Monitor 24 LED Full HD	202	1	Asus
+7	Monitor 27 LED Full HD	245.99	1	Asus
+
+28
+select t1.codigo, t1.nombre, t1.precio, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.codigo_fabricante in (1,3,5)
+order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	5	Seagate
+10	Impresora HP Deskjet 3720	59.99	3	Hewlett-Packard
+11	Impresora HP Laserjet Pro M26nw	180	3	Hewlett-Packard
+6	Monitor 24 LED Full HD	202	1	Asus
+7	Monitor 27 LED Full HD	245.99	1	Asus
+
+
+29
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	8699	5	Seagate
+3	Disco SSD 1 TB	150.99	15099	4	Samsung
+4	GeForce GTX 1050Ti	185	18500	7	Gigabyte
+5	GeForce GTX 1080 Xtreme	755	75500	6	Crucial
+10	Impresora HP Deskjet 3720	59.99	5999	3	Hewlett-Packard
+11	Impresora HP Laserjet Pro M26nw	180	18000	3	Hewlett-Packard
+2	Memoria RAM DDR4 8GB	120	12000	6	Crucial
+6	Monitor 24 LED Full HD	202	20200	1	Asus
+7	Monitor 27 LED Full HD	245.99	24599	1	Asus
+9	Portátil Ideapd 320	444	44400	2	Lenovo
+8	Portátil Yoga 520	559	55900	2	Lenovo
+
+30
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t2.nombre like 's%'
+order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	8699	5	Seagate
+3	Disco SSD 1 TB	150.99	15099	4	Samsung
+
+31
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t2.nombre like '%e'
+order by t1.nombre asc, t1.precio desc;
+1	Disco duro SATA3 1TB	86.99	8699	5	Seagate
+4	GeForce GTX 1050Ti	185	18500	7	Gigabyte
+
+32
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t2.nombre like '%w%'
+order by t1.nombre asc, t1.precio desc;
+'10', 'Impresora HP Deskjet 3720', '59.99', '5999', '3', 'Hewlett-Packard'
+'11', 'Impresora HP Laserjet Pro M26nw', '180', '18000', '3', 'Hewlett-Packard'
+
+33
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t2.nombre like '____'
+order by t1.nombre asc, t1.precio desc;
+6	Monitor 24 LED Full HD	202	20200	1	Asus
+7	Monitor 27 LED Full HD	245.99	24599	1	Asus
+
+34
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.nombre like '%Portátil%'
+order by t1.nombre asc, t1.precio desc;
+9	Portátil Ideapd 320	444	44400	2	Lenovo
+8	Portátil Yoga 520	559	55900	2	Lenovo
+
+35
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.nombre like '%Monitor%' and t1.precio < 215
+order by t1.nombre asc, t1.precio desc;
+6	Monitor 24 LED Full HD	202	20200	1	Asus
+
+36
+select t1.codigo, t1.nombre, t1.precio, 100 * (t1.precio) AS centimos, t1.codigo_fabricante, t2.nombre AS fabricante  
+from producto t1 join fabricante t2 on t1.codigo_fabricante=t2.codigo
+where t1.precio >= 180
+order by t1.precio desc, t1.nombre asc;
+5	GeForce GTX 1080 Xtreme	755	75500	6	Crucial
+8	Portátil Yoga 520	559	55900	2	Lenovo
+9	Portátil Ideapd 320	444	44400	2	Lenovo
+7	Monitor 27 LED Full HD	245.99	24599	1	Asus
+6	Monitor 24 LED Full HD	202	20200	1	Asus
+4	GeForce GTX 1050Ti	185	18500	7	Gigabyte
+11	Impresora HP Laserjet Pro M26nw	180	18000	3	Hewlett-Packard
